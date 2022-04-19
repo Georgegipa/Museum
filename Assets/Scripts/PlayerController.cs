@@ -6,9 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform playerCamera = null;
     [SerializeField] float mouseSensitivity = 3.5f;
-    [SerializeField] float walkSpeed = 6.0f; 
-    [SerializeField] float gravity = -13.0f; 
-
+    [SerializeField] float walkSpeed = 6.0f;
+    [SerializeField] float maxSprintSpeed = 12.0f;
+    [SerializeField] float gravity = -13.0f;
+    [SerializeField] float speedScale = 0.01f;
+    private float defaultSpeed;
+    
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
 
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        defaultSpeed = walkSpeed;
         if(lookCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -40,6 +44,16 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMouseLook();
         UpdateMovement();
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (walkSpeed <= maxSprintSpeed)
+                walkSpeed+= speedScale;
+        }
+        else
+        {
+            if (walkSpeed != defaultSpeed)
+                walkSpeed -= speedScale;
+        }
     }
 
     void UpdateMouseLook()

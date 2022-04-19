@@ -1,0 +1,16 @@
+{
+	"example_ek8ema_1":
+	{
+		"sprite_path":"example/path",
+		"info":"Αυτό είναι ενα string",
+		"quantity":34,
+		"price":23.12
+	},
+	"example_ek8ema_2":
+	{
+		"sprite_path":"example/path",
+		"info":"Παράδειγμα εκθέματος 2.To τελευταίο στοιχείο κάθε json αντικειμένου δεν χρειάζεται ','!",
+		"quantity":34,
+		"price":23.12
+	}
+}
