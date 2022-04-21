@@ -8,15 +8,15 @@
       "price": 23.12
     },
     {
-      "name": "Exhibit 1",
-      "path": "example/path/to/exhibit/1",
+      "name": "REnewOrleans",
+      "path": "Images/REnewOrleans",
       "info": "Παράδειγμα 1",
       "quantity": 34,
       "price": 23.12
     },
     {
-      "name": "Exhibit 2",
-      "path": "example/path/to/exhibit/2",
+      "name": "REstaxomazw",
+      "path": "Images/REkalimera",
       "info": "Παράδειγμα 2",
       "quantity": 23,
       "price": 12
