@@ -10,13 +10,14 @@ public class PlayerLookAt : MonoBehaviour
     //Warning spaghetti! You have been warned!
     [SerializeField] Canvas _canvas; //the canvas that will be used to display info and the cart
     [SerializeField] TextAsset jsonFile;//the json file that will be used to retrieve the data for every exhibit
-    private GameObject infoPanel, infoPicture, infoText;
+    private GameObject infoPanel, infoPicture, infoText, infoTitle; //the info panel components
     private Dictionary<string, Exhibit> exhibitDictionary;
 
     //The following objects are used to store the information from the json file
     [Serializable]
     public class Exhibit
     {
+        public string title;
         public string path;
         public string info;
         public int quantity;
@@ -35,11 +36,12 @@ public class PlayerLookAt : MonoBehaviour
         foreach (DataRow row in dataTable.Rows)
         {
             Exhibit exhibit = new Exhibit();
+            exhibit.title = row["title"].ToString();
             exhibit.path = row["path"].ToString();
             exhibit.info = row["info"].ToString();
             exhibit.quantity = int.Parse(row["quantity"].ToString());
             exhibit.price = float.Parse(row["price"].ToString());
-            exhibitDictionary.Add(row["name"].ToString(), exhibit);
+            exhibitDictionary.Add(row["tag"].ToString(), exhibit);
         }
 
         //now display the data
@@ -56,6 +58,7 @@ public class PlayerLookAt : MonoBehaviour
         {
             infoPanel.SetActive(true);
             infoText.GetComponent<Text>().text = exhibitDictionary[exhibit_tag].info;
+            infoTitle.GetComponent<Text>().text = exhibitDictionary[exhibit_tag].title;
             infoPicture.GetComponent<Image>().sprite = Resources.Load<Sprite>(exhibitDictionary[exhibit_tag].path);
         }
     }
@@ -65,8 +68,9 @@ public class PlayerLookAt : MonoBehaviour
     {
         infoPanel = _canvas.GetComponent<Transform>().GetChild(0).gameObject;
         var infopanelobjects = infoPanel.GetComponent<Transform>();
-        infoPicture = infopanelobjects.GetChild(0).gameObject;
-        infoText = infopanelobjects.GetChild(1).gameObject;
+        infoTitle = infopanelobjects.GetChild(0).gameObject;
+        infoPicture = infopanelobjects.GetChild(1).gameObject;
+        infoText = infopanelobjects.GetChild(2).gameObject;
     }
 
     void Start()

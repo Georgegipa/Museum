@@ -1,22 +1,25 @@
 {
   "exhibits": [
     {
-      "name": "ROsxedia medusa",
+      "tag": "ROsxedia medusa",
+	  "title": "Η Σχεδία της Μέδουσας",
       "path": "Images/sxedia_medusa",
       "info": "Η Σχεδία της Μέδουσας είναι ζωγραφικός πίνακας μεγάλων διαστάσεων του Γάλλου ρομαντικού ζωγράφου Ζαν-Λουί-Τεοντόρ Ζερικώ, ο οποίος προκάλεσε αμηχανία στους καλλιτεχνικούς κύκλους τόσο για το μοντερνισμό του θέματος όσο και για τους αιχμηρούς πολιτικούς υπαινιγμούς του.",
       "quantity": 34,
       "price": 23.12
     },
     {
-      "name": "REnewOrleans",
-      "path": "Images/REnewOrleans",
+      "tag": "Example 1",
+	  "title": "example 1",
+      "path": "example/path/to/exhibit/1",
       "info": "Παράδειγμα 1",
       "quantity": 34,
       "price": 23.12
     },
     {
-      "name": "REstaxomazw",
-      "path": "Images/REkalimera",
+      "tag": "Example 2",
+	  "title": "example 2",
+      "path": "example/path/to/exhibit/2",
       "info": "Παράδειγμα 2",
       "quantity": 23,
       "price": 12
