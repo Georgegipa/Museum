@@ -30,6 +30,8 @@ TagManager:
   - NAmorning
   - NAswamp
   - Agent
+  - wall
+  - GreekVase
   layers:
   - Default
   - TransparentFX

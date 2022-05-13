@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         defaultSpeed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
@@ -95,6 +96,10 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
             lockMouse = true;
         }
+        else if(other.tag == "wall")
+        {
+            
+        }
     }
 
     //What happens when the player leaves a exhibit's collider
@@ -104,6 +109,10 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.visible = false;
             lockMouse = false;
+        }
+        else if(other.tag == "wall")
+        {
+
         }
     }
 }
