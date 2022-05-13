@@ -9,20 +9,188 @@
       "price": 23.12
     },
     {
-      "tag": "Example 1",
+      "tag": "ROautoproswpografia",
 	  "title": "example 1",
-      "path": "example/path/to/exhibit/1",
+      "path": "Images/ROautoproswpografia",
       "info": "Παράδειγμα 1",
       "quantity": 34,
       "price": 23.12
     },
     {
-      "tag": "Example 2",
-	  "title": "example 2",
-      "path": "example/path/to/exhibit/2",
-      "info": "Παράδειγμα 2",
-      "quantity": 23,
-      "price": 12
+      "tag": "ROsxediaMedusa",
+	  "title": "example 1",
+      "path": "Images/ROsxediaMedusa",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "ROEleutheriaLaos",
+	  "title": "example 1",
+      "path": "Images/ROEleutheriaLaos",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "ROodoiporos",
+	  "title": "example 1",
+      "path": "Images/ROodoiporos",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "ROElladaMessologi",
+	  "title": "example 1",
+      "path": "Images/ROElladaMessologi",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "REnewOrleans",
+	  "title": "psaeades",
+      "path": "Images/REnewOrleans",
+      "info": "IHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "REkalimera",
+	  "title": "example 1",
+      "path": "Images/REkalimera",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "REstaxtomazwxtra",
+	  "title": "example 1",
+      "path": "Images/REstaxtomazwxtra",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "REvagoni",
+	  "title": "example 1",
+      "path": "Images/REvagoni",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "REplum",
+	  "title": "example 1",
+      "path": "Images/REplum",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "REvangog",
+	  "title": "example 1",
+      "path": "Images/REvangog",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "SUFace",
+	  "title": "psaeades",
+      "path": "Images/SUFace",
+      "info": "IHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "SUGarden",
+	  "title": "example 1",
+      "path": "Images/SUGarden",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "SUHector",
+	  "title": "example 1",
+      "path": "Images/SUHector",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "SUPersistence",
+	  "title": "example 1",
+      "path": "Images/SUPersistence",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "SUchallenge",
+	  "title": "example 1",
+      "path": "Images/SUchallenge",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "SUDis",
+	  "title": "example 1",
+      "path": "Images/SUDis",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "NAfishing",
+	  "title": "psaeades",
+      "path": "Images/NAfishing",
+      "info": "IHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "NAforest",
+	  "title": "example 1",
+      "path": "Images/NAforest",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "NAlivadi",
+	  "title": "example 1",
+      "path": "Images/NAlivadi",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "NAmare",
+	  "title": "example 1",
+      "path": "Images/NAmare",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "NAmorning",
+	  "title": "example 1",
+      "path": "Images/NAmorning",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "NAswamp",
+	  "title": "example 1",
+      "path": "Images/NAswamp",
+      "info": "Παράδειγμα 1",
+      "quantity": 34,
+      "price": 23.12
     }
   ] 
 }

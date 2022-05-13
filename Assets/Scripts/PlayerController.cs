@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravity = -13.0f;
     [SerializeField] float speedScale = 0.01f;
     private float defaultSpeed;
+    bool lockMouse = false;
     
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
 
-    [SerializeField] bool lookCursor = true;
     [SerializeField][Range(0.0f, 0.5f)] float moveSmoothTime = 0.3f;
     [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
 
@@ -31,17 +31,14 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         defaultSpeed = walkSpeed;
-        if(lookCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         UpdateMouseLook();
         UpdateMovement();
         if (Input.GetKey(KeyCode.LeftShift))
@@ -58,17 +55,20 @@ public class PlayerController : MonoBehaviour
 
     void UpdateMouseLook()
     {
-        Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        if(!lockMouse)
+        {
+            Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity,
+                mouseSmoothTime);
 
-        currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
+            cameraPitch -= currentMouseDelta.y * mouseSensitivity;
 
-        cameraPitch -= currentMouseDelta.y * mouseSensitivity;
+            cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
 
-        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f); 
+            playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
-        playerCamera.localEulerAngles = Vector3.right * cameraPitch;
-
-        transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
+            transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
+        }
     }
 
     void UpdateMovement()
@@ -85,5 +85,25 @@ public class PlayerController : MonoBehaviour
 
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
         controller.Move(velocity * Time.deltaTime);
+    }
+    
+    //What happens when the player enter a exhibit's collider
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag != null)
+        {
+            Cursor.visible = true;
+            lockMouse = true;
+        }
+    }
+
+    //What happens when the player leaves a exhibit's collider
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag != null)
+        {
+            Cursor.visible = false;
+            lockMouse = false;
+        }
     }
 }
