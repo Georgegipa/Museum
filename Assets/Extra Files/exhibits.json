@@ -193,10 +193,34 @@
       "price": 23.12
     },
     {
-      "tag": "VaseCube",
-	  "title": "Ancient Greek Vase",
-      "path": "Images/VaseCube",
-      "info": "Αρχαιοελληνικός ερυθρόμορφος αμφορέας",
+      "tag": "Discobolus",
+	  "title": "Discobolus Statue",
+      "path": "Images/Discobolus",
+      "info": "The Discobolus of Myron is a Greek sculpture that was completed toward the end of the Severe period, circa 460–450 BC. The potential energy expressed in this sculpture's tightly wound pose, expressing the moment of stasis just before the release, is an example of the advancement of Classical sculpture from Archaic. The torso shows no muscular strain, however, even though the limbs are outflung. ",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "GreekStatueRomantic",
+	  "title": "Statue of Greek Slave",
+      "path": "Images/GreekStatueRomantic",
+      "info": "Άγαλμα εποχής Ρομαντισμού",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "HorseStatue",
+	  "title": "Horse Statue",
+      "path": "Images/HorseStatue",
+      "info": "Αντιπροσωπεύει την άγρια φύση",
+      "quantity": 34,
+      "price": 23.12
+    },
+    {
+      "tag": "Dragon",
+	  "title": "Surrealistic Dragon",
+      "path": "Images/Dragon",
+      "info": "Σουρεαλιστικος Δράκος",
       "quantity": 34,
       "price": 23.12
     }

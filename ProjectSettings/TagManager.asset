@@ -32,6 +32,10 @@ TagManager:
   - Agent
   - wall
   - GreekVase
+  - GreekStatueRomantic
+  - HorseStatue
+  - Discobolus
+  - Dragon
   layers:
   - Default
   - TransparentFX
