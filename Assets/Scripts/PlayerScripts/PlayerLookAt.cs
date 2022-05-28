@@ -8,9 +8,10 @@ using Newtonsoft.Json;
 public class PlayerLookAt : MonoBehaviour
 {
     //Warning spaghetti! You have been warned!
+    public static Tuple<string,Exhibit> currentExhibit;//Tuple is a pair of objects , string is the tag of the object and Exhibit is the object itself
     [SerializeField] Canvas _canvas; //the canvas that will be used to display info and the cart
     [SerializeField] TextAsset jsonFile;//the json file that will be used to retrieve the data for every exhibit
-    private GameObject infoPanel, infoPicture, infoText, infoTitle; //the info panel components
+    private static GameObject infoPanel, infoPicture, infoText, infoTitle,addToCartbtn,addToCartIcon,topCornerCartIcon,topCornerCartPriceText; //the info panel components
     private Dictionary<string, Exhibit> exhibitDictionary;
 
     //The following objects are used to store the information from the json file
@@ -43,12 +44,6 @@ public class PlayerLookAt : MonoBehaviour
             exhibit.price = float.Parse(row["price"].ToString());
             exhibitDictionary.Add(row["tag"].ToString(), exhibit);
         }
-
-        //now display the data
-        foreach (KeyValuePair<string, Exhibit> entry in exhibitDictionary)
-        {
-            Debug.Log(entry.Key + " - " + entry.Value.info);
-        }
     }
 
     //Place the info of the exhibit in the info panel
@@ -60,17 +55,25 @@ public class PlayerLookAt : MonoBehaviour
             infoText.GetComponent<Text>().text = exhibitDictionary[exhibit_tag].info;
             infoTitle.GetComponent<Text>().text = exhibitDictionary[exhibit_tag].title;
             infoPicture.GetComponent<Image>().sprite = Resources.Load<Sprite>(exhibitDictionary[exhibit_tag].path);
+            currentExhibit = new Tuple<string, Exhibit>(exhibit_tag, exhibitDictionary[exhibit_tag]);//set the current exhibit to the one that is currently being looked at
+            changeAddToCartBtn();
         }
     }
 
     //Retrieve the individual objects from info panel
     void InfoPanelObjects()
     {
-        infoPanel = _canvas.GetComponent<Transform>().GetChild(0).gameObject;
+        var parentpanel = _canvas.transform.Find("InfoPanel");
+        infoPanel = parentpanel.GetComponent<Transform>().GetChild(0).gameObject;
+        topCornerCartIcon = parentpanel.GetComponent<Transform>().GetChild(1).gameObject;
+        topCornerCartPriceText = topCornerCartIcon.GetComponent<Transform>().GetChild(0).gameObject;
         var infopanelobjects = infoPanel.GetComponent<Transform>();
         infoTitle = infopanelobjects.GetChild(0).gameObject;
         infoPicture = infopanelobjects.GetChild(1).gameObject;
         infoText = infopanelobjects.GetChild(2).gameObject;
+        var addtocart = infopanelobjects.GetChild(3).gameObject;
+        addToCartIcon = addtocart.transform.GetChild(0).gameObject;
+        addToCartbtn = addtocart.transform.GetChild(1).gameObject;
     }
 
     void Start()
@@ -78,6 +81,7 @@ public class PlayerLookAt : MonoBehaviour
         InfoPanelObjects();
         infoPanel.SetActive(false);
         JSONToDictionary();
+        currentExhibit = null;
     }
 
     //What happens when the player enter a exhibit's collider
@@ -95,11 +99,40 @@ public class PlayerLookAt : MonoBehaviour
         if (other.tag != null)
         {
             infoPanel.SetActive(false);
+            currentExhibit = null;
         }
     }
 
+    public static void changeAddToCartBtn()
+    {
+        //check if the exhibit is already in the cart
+        if (CartContents.getNumItems()>0)
+        {
+            topCornerCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/items_in_cart");
+            topCornerCartPriceText.GetComponent<Text>().text = CartContents.getTotalPrice().ToString() + "€";
+        }
+        else 
+        {
+            topCornerCartPriceText.GetComponent<Text>().text = "";
+            topCornerCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/empty_cart");
+        }
+        if (CartContents.itemExists(currentExhibit.Item1))
+        {
+            //set addCartBtn text
+            addToCartbtn.GetComponentInChildren<Text>().text = "REMOVE FROM CART";
+            //change the icon
+            addToCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/remove_from_cart");
+        }
+        else
+        {
+            addToCartbtn.GetComponentInChildren<Text>().text = "ADD TO CART";
+            addToCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/add_to_cart");
+        }
+    }
+    
     //placeholder , not needed for this script
     void Update()
     {
+        
     }
 }

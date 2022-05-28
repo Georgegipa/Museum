@@ -7,7 +7,6 @@ public class AgentTrigger : MonoBehaviour
     //Warning spaghetti! You have been warned!
     [SerializeField] Canvas _canvas; //the canvas that will be used to display info and the cart
     private GameObject infoPanel;
-    [SerializeField] bool lookCursor = true;
 
     //Place the info of the exhibit in the info panel
     void CanvasToPanel(string exhibit_tag = "Agent")
@@ -33,7 +32,6 @@ public class AgentTrigger : MonoBehaviour
         if (other.tag != null)
         {
             CanvasToPanel(other.tag);
-            lookCursor = false;
         }
     }
 

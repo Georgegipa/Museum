@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -33,7 +31,7 @@ public class PlayerController : MonoBehaviour
         defaultSpeed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -95,10 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.visible = true;
             lockMouse = true;
-        }
-        else if(other.tag == "wall")
-        {
-            
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -109,10 +104,7 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.visible = false;
             lockMouse = false;
-        }
-        else if(other.tag == "wall")
-        {
-
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
