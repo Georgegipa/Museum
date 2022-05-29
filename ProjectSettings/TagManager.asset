@@ -36,6 +36,8 @@ TagManager:
   - HorseStatue
   - Discobolus
   - Dragon
+  - cinemaHandler
+  - cinema
   layers:
   - Default
   - TransparentFX
