@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class VideoTrigger : MonoBehaviour
 {
     [SerializeField] Canvas _canvas; //the canvas that will be used to display info and the cart
     private GameObject infoPanel;
+    public VideoPlayer video;
 
     //Place the info of the exhibit in the info panel
     void CanvasToPanel(string exhibit_tag = "cinema")
@@ -20,7 +22,7 @@ public class VideoTrigger : MonoBehaviour
     }
 
     void Start()
-    {
+    {        
         InfoPanelObjects();
         infoPanel.SetActive(false);
     }
@@ -31,6 +33,7 @@ public class VideoTrigger : MonoBehaviour
         if (other.tag != null)
         {
             CanvasToPanel(other.tag);
+            video.Play();
         }
     }
 
@@ -40,6 +43,7 @@ public class VideoTrigger : MonoBehaviour
         if (other.tag != null)
         {
             infoPanel.SetActive(false);
+            video.Pause();
         }
     }
 
