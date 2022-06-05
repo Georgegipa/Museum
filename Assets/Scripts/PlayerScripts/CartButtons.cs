@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class AddToCart : MonoBehaviour
+public class CartButtons : MonoBehaviour
 {
-    //add the selected item to the cart
-    public void buttonAction()
+    public void addToCartBtn()
     {
         var e = PlayerLookAt.currentExhibit;
         if(e == null)//player is not looking at an exhibit
@@ -19,6 +17,12 @@ public class AddToCart : MonoBehaviour
         else
             CartContents.addItem(e.Item1,e.Item2);
         Debug.Log("Items in cart: " + CartContents.getNumItems());
+        PlayerLookAt.changeAddToCartBtn();
+    }
+
+    public void checkoutDone()
+    {
+        CartContents.clearCart();
         PlayerLookAt.changeAddToCartBtn();
     }
 }

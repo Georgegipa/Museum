@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //This script is used to control the contents of the cart
@@ -23,6 +24,14 @@ public class CartContents : MonoBehaviour
             cartItems.Remove(tag);
         }
     }
+    
+    public static void removeItem(int index)
+    {
+        //remove the item at the index
+        print(cartItems.Keys.ToArray()[index]);
+        cartItems.Remove(cartItems.Keys.ToArray()[index]);
+    }
+    
     //get the total price of the cart dictionary
     public static float getTotalPrice()
     {

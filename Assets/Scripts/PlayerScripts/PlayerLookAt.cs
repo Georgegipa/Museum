@@ -11,8 +11,10 @@ public class PlayerLookAt : MonoBehaviour
     public static Tuple<string,Exhibit> currentExhibit;//Tuple is a pair of objects , string is the tag of the object and Exhibit is the object itself
     [SerializeField] Canvas _canvas; //the canvas that will be used to display info and the cart
     [SerializeField] TextAsset jsonFile;//the json file that will be used to retrieve the data for every exhibit
-    private static GameObject infoPanel, infoPicture, infoText, infoTitle,addToCartbtn,addToCartIcon,topCornerCartIcon,topCornerCartPriceText; //the info panel components
+    private static GameObject  moreinfoPanel,infoPicture, infoText, infoTitle,addToCartbtn,addToCartIcon,topCornerCartIcon,topCornerCartPriceText; //the info panel components
     private Dictionary<string, Exhibit> exhibitDictionary;
+    public static GameObject infoPanel, cartPanel,paymentPanel;
+    public static bool insideExbibitCollider= false;//check if the player is looking at a exhibit
 
     //The following objects are used to store the information from the json file
     [Serializable]
@@ -51,7 +53,8 @@ public class PlayerLookAt : MonoBehaviour
     {
         if (exhibitDictionary.ContainsKey(exhibit_tag))
         {
-            infoPanel.SetActive(true);
+            insideExbibitCollider = true;
+            moreinfoPanel.SetActive(true);
             infoText.GetComponent<Text>().text = exhibitDictionary[exhibit_tag].info;
             infoTitle.GetComponent<Text>().text = exhibitDictionary[exhibit_tag].title;
             infoPicture.GetComponent<Image>().sprite = Resources.Load<Sprite>(exhibitDictionary[exhibit_tag].path);
@@ -64,10 +67,15 @@ public class PlayerLookAt : MonoBehaviour
     void InfoPanelObjects()
     {
         var parentpanel = _canvas.transform.Find("InfoPanel");
-        infoPanel = parentpanel.GetComponent<Transform>().GetChild(0).gameObject;
+        infoPanel = parentpanel.gameObject;
+        moreinfoPanel = parentpanel.GetComponent<Transform>().GetChild(0).gameObject;
+        cartPanel = _canvas.transform.Find("CartPanel").gameObject;
+        cartPanel.SetActive(false);
+        paymentPanel = _canvas.transform.Find("PaymentPanel").gameObject;
+        paymentPanel.SetActive(false);
         topCornerCartIcon = parentpanel.GetComponent<Transform>().GetChild(1).gameObject;
         topCornerCartPriceText = topCornerCartIcon.GetComponent<Transform>().GetChild(0).gameObject;
-        var infopanelobjects = infoPanel.GetComponent<Transform>();
+        var infopanelobjects = moreinfoPanel.GetComponent<Transform>();
         infoTitle = infopanelobjects.GetChild(0).gameObject;
         infoPicture = infopanelobjects.GetChild(1).gameObject;
         infoText = infopanelobjects.GetChild(2).gameObject;
@@ -79,7 +87,7 @@ public class PlayerLookAt : MonoBehaviour
     void Start()
     {
         InfoPanelObjects();
-        infoPanel.SetActive(false);
+        moreinfoPanel.SetActive(false);
         JSONToDictionary();
         currentExhibit = null;
     }
@@ -98,7 +106,8 @@ public class PlayerLookAt : MonoBehaviour
     {
         if (other.tag != null)
         {
-            infoPanel.SetActive(false);
+            insideExbibitCollider =false;
+            moreinfoPanel.SetActive(false);
             currentExhibit = null;
         }
     }
@@ -116,19 +125,24 @@ public class PlayerLookAt : MonoBehaviour
             topCornerCartPriceText.GetComponent<Text>().text = "";
             topCornerCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/empty_cart");
         }
-        if (CartContents.itemExists(currentExhibit.Item1))
-        {
-            //set addCartBtn text
-            addToCartbtn.GetComponentInChildren<Text>().text = "REMOVE FROM CART";
-            //change the icon
-            addToCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/remove_from_cart");
-        }
-        else
-        {
-            addToCartbtn.GetComponentInChildren<Text>().text = "ADD TO CART";
-            addToCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/add_to_cart");
+        if(insideExbibitCollider)
+        {//update the add to cart button in the infopanel only if the player is looking at an exhibit
+            if (CartContents.itemExists(currentExhibit.Item1))
+            {
+                //set addCartBtn text
+                addToCartbtn.GetComponentInChildren<Text>().text = "ΑΦΑΙΡΕΣΗ ΑΠΟ ΤΟ ΚΑΛΑΘΙ";
+                //change the icon
+                addToCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/remove_from_cart");
+            }
+            else
+            {
+                addToCartbtn.GetComponentInChildren<Text>().text = "ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ";
+                addToCartIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/add_to_cart");
+            }
         }
     }
+    
+    
     
     //placeholder , not needed for this script
     void Update()
