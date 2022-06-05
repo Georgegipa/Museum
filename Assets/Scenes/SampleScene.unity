@@ -961,12 +961,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'General Entrance : 20$
-
-      For students/unemployed : 8$
-
-      Every Wednesday
-      : 16$'
+    - "\u0393\u03B5\u03BD\u03B9\u03BA\u03AE \u0395\u03AF\u03C3\u03BF\u03B4\u03BF\u03C2
+      : 20$\n\u039C\u03B1\u03B8\u03B7\u03C4\u03AD\u03C2/\u0386\u03BD\u03B5\u03C1\u03B3\u03BF\u03B9
+      : 8$\n\u039A\u03AC\u03B8\u03B5 \u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1 \u03BA\u03B1\u03B9
+      \u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7 : 16$"
 --- !u!114 &134455407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,9 +1222,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hello! I am your virtual assistant.
-
-    How can i help you?'
+  m_Text: "\u0393\u03B5\u03B9\u03B1! \u0395\u03AF\u03BC\u03B1\u03B9 \u03BF \u03B5\u03B9\u03BA\u03BF\u03BD\u03B9\u03BA\u03CC\u03C2
+    \u03C3\u03B1\u03C2 \u03C0\u03C1\u03AC\u03BA\u03C4\u03BF\u03C1\u03B1\u03C2! \u03A0\u03CE\u03C2
+    \u03BC\u03C0\u03BF\u03C1\u03CE \u03BD\u03B1 \u03C3\u03B1\u03C2 \u03B2\u03BF\u03B7\u03B8\u03AE\u03C3\u03C9?"
 --- !u!222 &145185842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1623,12 +1621,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 357789867}
+  - {fileID: 1877682065}
   - {fileID: 550189418}
   - {fileID: 1619389852}
   - {fileID: 2108157302}
   - {fileID: 664090746}
   - {fileID: 918233405}
-  - {fileID: 1877682065}
   m_Father: {fileID: 2103525228}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2078,7 +2076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &242878193
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2144,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 628045165}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 2
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2154,8 +2152,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1827999009}
         m_TargetAssemblyTypeName: track, Assembly-CSharp
-        m_MethodName: volume
-        m_Mode: 1
+        m_MethodName: updateVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2366,7 +2364,7 @@ Transform:
   - {fileID: 1974555081}
   - {fileID: 1317424720}
   m_Father: {fileID: 900225768}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &256854987
 PrefabInstance:
@@ -2717,7 +2715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Virtual Assistant
+  m_Text: "\u0395\u03B9\u03BA\u03BF\u03BD\u03B9\u03BA\u03CC\u03C2 \u0392\u03BF\u03B7\u03B8\u03CC\u03C2"
 --- !u!222 &288882750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3599,8 +3597,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Our visitors often have the chance to attend different speeches by modern artists.
-      We also host concerts and film festivals.
+    - "\u03A4\u03BF \u03BC\u03BF\u03C5\u03C3\u03B5\u03AF\u03BF \u03BC\u03B1\u03C2
+      \u03C6\u03B9\u03BB\u03BF\u03BE\u03B5\u03BD\u03B5\u03AF \u03B4\u03B9\u03AC\u03C6\u03BF\u03C1\u03B5\u03C2
+      \u03BC\u03B9\u03BA\u03C1\u03AD\u03C2 \u03B5\u03BA\u03B4\u03B7\u03BB\u03CE\u03C3\u03B5\u03B9\u03C2,
+      \u03CC\u03C0\u03C9\u03C2 \u03BC\u03B9\u03BA\u03C1\u03AD\u03C2 \u03C3\u03C5\u03BD\u03B1\u03C5\u03BB\u03AF\u03B5\u03C2
+      \u03BA\u03B1\u03B9 \u03B5\u03BA\u03B8\u03AD\u03C3\u03B5\u03B9\u03C2 \u03B2\u03B9\u03B2\u03BB\u03AF\u03C9\u03BD
+      \u03BA\u03B1\u03B9 \u03C0\u03BF\u03B9\u03B7\u03C4\u03B9\u03BA\u03CE\u03BD \u03C3\u03C5\u03BB\u03BB\u03BF\u03B3\u03CE\u03BD."
 --- !u!114 &376227540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3992,7 +3994,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Contact Information
+  m_Text: "\u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2 \u0395\u03C0\u03B9\u03BA\u03BF\u03B9\u03BD\u03C9\u03BD\u03AF\u03B1\u03C2"
 --- !u!222 &426631797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4285,9 +4287,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'Under the auspices of SNFCC.
-
-      Link: info@snfcc.org'
+    - "\u03A5\u03C0\u03CC \u03C4\u03B7\u03BD \u03B1\u03B9\u03B3\u03AF\u03B4\u03B1
+      \u03C4\u03BF\u03C5 \u03B9\u03B4\u03C1\u03CD\u03BC\u03B1\u03C4\u03BF\u03C2 \u03A3\u03C4\u03B1\u03CD\u03C1\u03BF\u03C2
+      \u039D\u03B9\u03AC\u03C1\u03C7\u03BF\u03C2.\nLink: info@snfcc.org"
 --- !u!114 &463627822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4853,7 +4855,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41386
+  m_Name: pb_Mesh18232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5175,7 +5177,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Events
+  m_Text: "\u0395\u03BA\u03B4\u03B7\u03BB\u03CE\u03C3\u03B5\u03B9\u03C2"
 --- !u!222 &527676568
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5307,8 +5309,8 @@ RectTransform:
   m_Father: {fileID: 1922514162}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6067,7 +6069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: About us
+  m_Text: "\u03A3\u03C7\u03B5\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03C4\u03BF \u03BC\u03BF\u03C5\u03C3\u03B5\u03AF\u03BF"
 --- !u!222 &746106775
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7410,7 +7412,7 @@ Transform:
   m_LocalScale: {x: 8, y: 5, z: 0.36499995}
   m_Children: []
   m_Father: {fileID: 1354381230}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &875439855
 SphereCollider:
@@ -7660,12 +7662,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1897731738}
+  - {fileID: 256814277}
   - {fileID: 132291281}
   - {fileID: 1226525312}
   - {fileID: 1708769592}
   - {fileID: 226038548}
   - {fileID: 1415856275}
-  - {fileID: 256814277}
   m_Father: {fileID: 2103525228}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7816,7 +7818,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - The museum is open from 08:00AM to 08:00PM.
+    - "\u03A4\u03BF \u03BC\u03BF\u03C5\u03C3\u03B5\u03AF\u03BF \u03B5\u03AF\u03BD\u03B1\u03B9
+      \u03B1\u03BD\u03BF\u03B9\u03BA\u03C4\u03CC \u03B1\u03C0\u03CC \u03C4\u03B9\u03C2
+      08:00 \u03C0.\u03BC. \u03BC\u03AD\u03C7\u03C1\u03B9 20:00 \u03BC.\u03BC."
 --- !u!114 &917802728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9207,7 +9211,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Operation hours
+  m_Text: "\u038F\u03C1\u03B5\u03C2 \u039B\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1\u03C2"
 --- !u!222 &1040438643
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9928,7 +9932,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sponsors
+  m_Text: "\u03A7\u03BF\u03C1\u03B7\u03B3\u03BF\u03AF"
 --- !u!222 &1129892985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10090,7 +10094,7 @@ Transform:
   - {fileID: 1578316312}
   - {fileID: 1944175805}
   m_Father: {fileID: 1863950986}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155778271
 GameObject:
@@ -10378,7 +10382,7 @@ Transform:
   - {fileID: 107151498}
   - {fileID: 748731783}
   m_Father: {fileID: 1476813078}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177366484
 GameObject:
@@ -12269,8 +12273,8 @@ RectTransform:
   m_Father: {fileID: 62602524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12510,8 +12514,8 @@ Transform:
   m_LocalPosition: {x: -116.19383, y: -201.05772, z: 1071.4009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 98856362}
   - {fileID: 875439854}
+  - {fileID: 98856362}
   - {fileID: 789064711}
   m_Father: {fileID: 1683672970}
   m_RootOrder: 2
@@ -12652,7 +12656,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tickets
+  m_Text: "\u0395\u03B9\u03C3\u03B9\u03C4\u03AE\u03C1\u03B9\u03B1"
 --- !u!222 &1380651588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13422,10 +13426,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 750585949}
-  - {fileID: 1409249950}
   - {fileID: 1168064745}
   - {fileID: 2114008348}
   - {fileID: 2136870100}
+  - {fileID: 1409249950}
   m_Father: {fileID: 2103525228}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15063,7 +15067,7 @@ Transform:
   - {fileID: 799259742}
   - {fileID: 1834792384}
   m_Father: {fileID: 1989920822}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1635350072 stripped
 GameObject:
@@ -17080,8 +17084,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'We are an open gallery. Our exhibits refer to different art genres so that
-      everyone has a deep insight into famous art pieces. '
+    - "\u0395\u03AF\u03BC\u03B1\u03C3\u03C4\u03B5 \u03BC\u03B9\u03B1 \u03B8\u03B5\u03BC\u03B1\u03C4\u03B9\u03BA\u03AE
+      \u03B3\u03BA\u03B1\u03BB\u03B5\u03C1\u03AF \u03B4\u03B9\u03AC\u03C6\u03BF\u03C1\u03C9\u03BD
+      \u03B5\u03B9\u03B4\u03CE\u03BD \u03C4\u03AD\u03C7\u03BD\u03B7\u03C2. \u03A3\u03BA\u03BF\u03C0\u03CC\u03C2
+      \u03BC\u03B1\u03C2 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BF \u03BA\u03AC\u03B8\u03B5
+      \u03B5\u03C0\u03B9\u03C3\u03BA\u03AD\u03C0\u03C4\u03B7\u03C2 \u03BD\u03B1 \u03B3\u03BD\u03C9\u03C1\u03AF\u03C3\u03B5\u03B9
+      \u03C4\u03B1 \u03B4\u03B9\u03AC\u03C6\u03BF\u03C1\u03B1 \u03C1\u03B5\u03CD\u03BC\u03B1\u03C4\u03B1
+      \u03C4\u03AD\u03C7\u03BD\u03B7\u03C2."
 --- !u!114 &1856751700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17248,12 +17257,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 994007052}
+  - {fileID: 1151563190}
   - {fileID: 762174427}
   - {fileID: 580342800}
   - {fileID: 784826976}
   - {fileID: 870835234}
   - {fileID: 1223917907}
-  - {fileID: 1151563190}
   m_Father: {fileID: 2103525228}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17372,7 +17381,7 @@ Transform:
   - {fileID: 246944530}
   - {fileID: 1498688291}
   m_Father: {fileID: 207464635}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878980528
 GameObject:
@@ -17851,7 +17860,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'Message us on: museum@unity.com Call us on: 2109876543'
+    - "\u0395\u03C0\u03B9\u03BA\u03BF\u03B9\u03BD\u03C9\u03BD\u03B5\u03AF\u03C3\u03C4\u03B5
+      \u03BC\u03B1\u03B6\u03AF \u03BC\u03B1\u03C2: museum@unity.com\n \u039A\u03B1\u03BB\u03AD\u03C3\u03C4\u03B5
+      \u03BC\u03B1\u03C2: 2109876543"
 --- !u!114 &1916319285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18377,8 +18388,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1921137271}
-  - {fileID: 2139218236}
   - {fileID: 1632508745}
+  - {fileID: 2139218236}
   m_Father: {fileID: 1683672970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22072,7 +22083,7 @@ Transform:
   - {fileID: 2117451490}
   - {fileID: 1798420704}
   m_Father: {fileID: 1476813078}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2117451489
 PrefabInstance:
@@ -22350,7 +22361,7 @@ Transform:
   - {fileID: 510921063}
   - {fileID: 971663278}
   m_Father: {fileID: 1476813078}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2139218235
 PrefabInstance:

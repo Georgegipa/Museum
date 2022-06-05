@@ -12,6 +12,7 @@ public class track : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public VideoPlayer video;
     Slider tracking;
     bool slide = false;
+    private float musicVolume = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +41,5 @@ public class track : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    public void volume()
-    {
-        audio.volume = audioVolume.value;
-    }
+
 }
