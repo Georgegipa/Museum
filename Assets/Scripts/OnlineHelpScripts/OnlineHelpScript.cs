@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HelpScript : MonoBehaviour
+public class OnlineHelpScript : MonoBehaviour
 {
     public GameObject panel;
     public GameObject showInfoText;

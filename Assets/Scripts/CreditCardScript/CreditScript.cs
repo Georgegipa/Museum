@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
-public class InputHandler : MonoBehaviour
+public class CreditScript : MonoBehaviour
 {
     public GameObject Panel;
     public Text AmountText,TotalAmountText,ExtraAmount; 
